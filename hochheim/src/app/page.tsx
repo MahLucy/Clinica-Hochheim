@@ -5,11 +5,8 @@ import Diferenciais from './Components/Diferenciais';
 import CallToAction from './Components/CallToAction';
 import Orientacoes from './Components/OrientacaoAgendamento';
 import Forms from './Components/Forms';
-
-
-
-
-
+import Depoimentos from './Components/Depoimentos';
+import Footer from './Components/Footer';
 
 export default function Page() {
   return (
@@ -34,6 +31,14 @@ export default function Page() {
         bulletIcon="/icons/bullet-triangle.png"
       />
       <Forms/>
+            <Depoimentos
+        itens={[
+          { nome: 'Nome', texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Excepteur sint occaecat cupidatat non proident.' },
+          { nome: 'Nome', texto: 'ELorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Excepteur sint occaecat cupidatat non proident.ELorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ', marginTop: '3rem' },
+          { nome: 'Nome', texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Excepteur sint occaecat cupidatat non proident.' },
+        ]}
+        />
+        <Footer />
     </>
   );
 }

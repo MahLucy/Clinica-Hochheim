@@ -17,14 +17,24 @@ type OrientacoesProps = {
   bulletIcon?: string;   // ex.: '/icons/bullet-triangle.png'
 };
 
+// const Bullet = ({ icon, children }: { icon: string; children: React.ReactNode }) => (
+//   <HStack align="start" spacing={3}>
+//     <Image src={icon} alt="" w="12px" h="12px" mt="10px" draggable={false} />
+//     <Text fontSize={{ base: 'lg', md: '3vh' }} lineHeight={{base:'1', md:'1.5'}} fontWeight="100"color="brand.800" mb={3}>
+//       {children}
+//     </Text>
+//   </HStack>
+// );
+
 const Bullet = ({ icon, children }: { icon: string; children: React.ReactNode }) => (
   <HStack align="start" spacing={3}>
     <Image src={icon} alt="" w="12px" h="12px" mt="10px" draggable={false} />
-    <Text fontSize={{ base: 'lg', md: '3vh' }} lineHeight={{base:'1', md:'1.5'}} fontWeight="100"color="brand.800" mb={3}>
+    <Box as="p" fontSize={{ base: 'lg', md: '3vh' }} lineHeight={{base:'1', md:'1.5'}} fontWeight={100} color="brand.800" mb={3}>
       {children}
-    </Text>
+    </Box>
   </HStack>
 );
+
 
 export default function Orientacoes({
   iconAgenda = '/icons/agenda.png',
@@ -49,7 +59,7 @@ export default function Orientacoes({
           </HStack>
 
         {/* Subtítulo/intro */}
-        <Text 
+        <Box as="p"
         fontSize={{ base: 'lg', md: '2rem' }}
         lineHeight={{base:'1', md:'1.5'}}
         fontWeight="100"color="brand.800"  
@@ -58,7 +68,7 @@ export default function Orientacoes({
           Nosso compromisso é oferecer um <b>atendimento organizado, pontual</b> e com
           <b> excelência técnica</b>. Para garantir a melhor experiência possível, observe as
           orientações abaixo:
-        </Text>
+        </Box>
 
         <Stack spacing={10}>
 
@@ -76,38 +86,37 @@ export default function Orientacoes({
               <Image src={iconAgenda} alt=""  draggable={false} />
             </Box>
 
-            <VStack align="start" spacing={4} >
-            <Text 
+            <Box as="p"
                 fontSize={{ base: 'lg', md: '2rem' }}
                 lineHeight={{base:'1', md:'1.5'}}
                 fontWeight="100" color="brand.800"  
-                mb={6}>
+                mb={6}  >
                 Recomendamos que a sua <b>consulta ou retorno</b> seja{' '}
                 <b>agendado com antecedência</b>.
-              </Text>
-              </VStack>
+              </Box>
+
             </Box>
               <VStack align="stretch" spacing={3} >
                 <Bullet icon={bulletIcon} >
                   Caso não possa comparecer, pedimos que nos avise com a maior antecedência possível.
                 </Bullet>
                 <Bullet icon={bulletIcon}>
-                  <b>Chegue com 15 minutos de antecedência</b>, especialmente em atendimentos com convênio,
+                  <Box as="span" fontWeight="bold">Chegue com 15 minutos de antecedência</Box>, especialmente em atendimentos com convênio,
                   para preenchimento das guias.
                 </Bullet>
                 <Bullet icon={bulletIcon}>
-                  Mantemos uma <b>tolerância máxima de 10 minutos</b> de atraso, em respeito aos demais
+                  Mantemos uma <Box as="span" fontWeight="bold">tolerância máxima de 10 minutos</Box> de atraso, em respeito aos demais
                   horários já agendados.
                 </Bullet>
                 <Bullet icon={bulletIcon}>
-                  <b>Na primeira consulta</b>, traga todos os exames, laudos e prescrições médicas que possuir.
+                  <Box as="span" fontWeight="bold">Na primeira consulta</Box>, traga todos os exames, laudos e prescrições médicas que possuir.
                 </Bullet>
                 <Bullet icon={bulletIcon}>
-                  Retornos para análise de exames devem ser <b>agendados previamente</b> — não realizamos esse
+                  Retornos para análise de exames devem ser <Box as="span" fontWeight="bold">agendados previamente</Box> — não realizamos esse
                   tipo de atendimento sem marcação.
                 </Bullet>
                 <Bullet icon={bulletIcon}>
-                  Para realizar suas sessões, é obrigatória a apresentação do <b>cronograma de horários</b>,
+                  Para realizar suas sessões, é obrigatória a apresentação do <Box as="span" fontWeight="bold">cronograma de horários</Box>,
                   entregue no dia da avaliação.
                 </Bullet>
               </VStack>
@@ -128,23 +137,24 @@ export default function Orientacoes({
             </Box>
 
             <VStack align="start" spacing={4}>
-            <Text 
+            <Box as="p" 
                 fontSize={{ base: 'lg', md: '2rem' }}
                 lineHeight={{base:'1', md:'1.5'}}
                 fontWeight="300"color="brand.800"  
                 mb={6}>
                 Se o atendimento for via <b>convênio</b>, não se esqueça de trazer:
-              </Text>
+              </Box>
               </VStack>
             </Box>
 
               <VStack align="stretch" spacing={3}>
-            <Text 
+            <Box as="p"
                 fontSize={{ base: 'lg', md: '2rem' }}
                 lineHeight={{base:'1', md:'1.5'}}
                 fontWeight="300"color="brand.800"  
                 >
-                <Bullet icon={bulletIcon}>Carteirinha atualizada;</Bullet>                </Text>
+                <Bullet icon={bulletIcon}>Carteirinha atualizada;</Bullet> 
+                </Box>
 
                 <Bullet icon={bulletIcon}>Documento de identidade.</Bullet>
               </VStack>

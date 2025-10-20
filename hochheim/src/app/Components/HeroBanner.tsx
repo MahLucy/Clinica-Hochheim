@@ -40,7 +40,7 @@ export default function HeroBanner({
                 <Text fontSize="light" letterSpacing="widest" color={'brand.200'}>
                   CLÍNICA HOCHHEIM • HIDRO E TERAPIAS
                 </Text>
-                <Image src={arrowSrc} alt="seta decorativa"  position="absolute" top="14.5rem" left={'30rem'} h={{ base: '0px', md: '7rem' }}
+                <Image src={arrowSrc} alt="seta decorativa"  position="absolute" top="18rem" left={'30rem'} h={{ base: '0px', md: '7rem' }}
     w="auto"/>
               </HStack>
               <Heading

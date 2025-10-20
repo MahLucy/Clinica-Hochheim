@@ -20,20 +20,29 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
+import { Link } from '@chakra-ui/react';
+import { usePathname } from 'next/navigation';
 
 type NavBarProps = {
   active?: 'sobre' | 'servicos' | 'estrutura' | 'kids' | 'contato';
 };
 
 const links = [
-  { id: 'sobre', label: 'Sobre', href: '#sobre' },
-  { id: 'servicos', label: 'Serviços', href: '#servicos' },
-  { id: 'estrutura', label: 'Sobre', href: '#estrutura' }, // no mock repete "Sobre"
-  { id: 'kids', label: 'Hochheim Kids', href: '#kids' },
+  { id: 'sobre', label: 'Sobre', href: '/' },
+  { id: 'servicos', label: 'Serviços', href: '/Servicos' },
+  { id: 'estrutura', label: 'Estrutura', href: '/estrutura' },
+  { id: 'kids', label: 'Hochheim Kids', href: '/kids' },
 ];
 
-export default function NavBar({ active = 'sobre' }: NavBarProps) {
+export default function NavBar({ active }: NavBarProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const pathname = usePathname();
+
+    // define o ativo: prioridade ao prop; senão, pelo path atual
+  const isActive = (id: string, href: string) => {
+    if (active) return active === (id as typeof active);
+    return pathname === href;
+  };
 
   return (
     <Box
@@ -48,7 +57,7 @@ export default function NavBar({ active = 'sobre' }: NavBarProps) {
       <Container maxW="6xl" py={{ base: 3, md: 10 }}>
         <Flex align="center" gap={6}>
           {/* LOGO */}
-          <CLink as={NextLink} href="#topo" _hover={{ opacity: 0.9 }}>
+          <CLink as={NextLink} href="/" _hover={{ opacity: 0.9 }}>
             <Image
               src="/logo.png"
               alt="Hochheim"

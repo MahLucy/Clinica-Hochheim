@@ -29,16 +29,15 @@ export default function ContatoSection({
   const fieldProps = {
     bg: 'brand.800',
     borderWidth: '1px',
-    borderColor: 'brand.200', // #92DEFD com alpha
     color: 'white',
-    _placeholder: { color: 'rgba(255, 255, 255, 0.93)' },
+    _placeholder: { color: 'rgba(255, 255, 255, 0.36)' },
     rounded: 'xl',
     h: '56px',
   } as const;
 
   return (
     <Box as="section" bg="brand.1000" color="white" py={{ base: 12, md: 20 }}>
-      <Container maxW={{ base: '92%', md: '80%', lg: '70%' }}>
+      <Container maxW={{ base: '92%', md: '70%', lg: '65%' }}>
         <VStack align="stretch" spacing={6}>
           <Heading fontSize={{ base: '2xl', md: '4xl' }} mb={2}>
             Fale Conosco
@@ -47,10 +46,10 @@ export default function ContatoSection({
           {/* Linha 1 */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
             <FormControl>
-              <Input placeholder="Nome" {...fieldProps} />
+              <Input placeholder="Nome" {...fieldProps} fontSize={{base: "md", md:'2xl'}}/>
             </FormControl>
             <FormControl>
-              <Input type="email" placeholder="E-mail" {...fieldProps} />
+              <Input type="email" placeholder="E-mail" {...fieldProps} fontSize={{base: "md", md:'2xl'}} />
             </FormControl>
           </SimpleGrid>
 
@@ -58,19 +57,22 @@ export default function ContatoSection({
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4}>
             <FormControl >
               <Input placeholder="Telefone" {...fieldProps}
+              resize="none"
               rounded="xl"
               bg="brand.800"
               borderWidth="1px"
               borderColor="brand.200"
               color="white"
               p={4}
-              fontWeight={'100'} />
+              fontWeight={'100'}
+              fontSize={{base: "md", md:'2xl'}}
+              />
             </FormControl>
             <FormControl>
-              <Input placeholder="Cidade" {...fieldProps} />
+              <Input placeholder="Cidade" {...fieldProps} fontSize={{base: "md", md:'2xl'}} />
             </FormControl>
             <FormControl>
-              <Input placeholder="Estado" {...fieldProps} />
+              <Input placeholder="Estado" {...fieldProps} fontSize={{base: "md", md:'2xl'}} />
             </FormControl>
           </SimpleGrid>
 
@@ -83,17 +85,16 @@ export default function ContatoSection({
               rounded="xl"
               bg="brand.800"
               borderWidth="1px"
-              borderColor="brand.200"
-              color="white"
               p={4}
               fontWeight={'100'}
+              fontSize={{base: "md", md:'2xl'}}
             />
           </FormControl>
 
           {/* Blocos de informação */}
           <SimpleGrid
             columns={{ base: 1, md: 3 }}
-            spacing={{ base: 8, md: 4 }}
+            spacing={{ base: 8, md: 10 }}
             pt={{ base: 8, md: 10 }}
           >
             <InfoItem
@@ -134,20 +135,20 @@ function InfoItem({
   return (
     <VStack spacing={2} textAlign="center">
       <Box
-        w={{ base: '1rem', md: '4rem' }}
-        h="5rem"
+        w={{ base: '3rem', md: '11rem' }}
+        h="10rem"
         rounded="full"
         display="grid"
         placeItems="center"
       >
         <Image src={icon} alt="" draggable={false} />
       </Box>
-      <Text fontWeight={700} fontSize="lg" lineHeight="shorter">
+      <Text fontWeight={800} fontSize={{base: "md", md:'2xl'}} lineHeight="shorter">
         {title}
       </Text>
-      <VStack spacing={0} opacity={0.9}>
+      <VStack  opacity={0.9} >
         {lines.map((l, i) => (
-          <Text key={i} fontSize="sm">
+          <Text key={i} fontSize={{base: "md", md:'1.4rem'}} lineHeight="shorter" fontWeight={"100"}>
             {l}
           </Text>
         ))}
