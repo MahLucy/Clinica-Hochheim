@@ -39,16 +39,16 @@ const Bullet = ({ icon, children }: { icon: string; children: React.ReactNode })
 export default function Orientacoes({
   iconAgenda = '/icons/agenda.png',
   iconConvenio = '/icons/convenio.png',
-  bulletIcon = '/icons/bullet.png',
+  bulletIcon = '/icons/bullet-triangle.png',
 }: OrientacoesProps) {
   return (
-    <Box as="section" bg="white" py={{ base: 10, md: 16 }} display={'flex'} flexDirection={"column"}>
+    <Box as="section" bg="brand.20" py={{ base: 10, md: 16 }} display={'flex'} flexDirection={"column"}>
       <Container maxW={{ base: '92%', md: '70%', lg: '60%' }}>
         {/* Título */}
 
           {/* Título com filete à esquerda */}
-          <HStack spacing={4}  justifyContent={"flex-start"} gap={'2rem'}>
-            <Box w="15rem" h="1rem" bg="brand.200" />
+          <HStack spacing={4}  justifyContent={"flex-start"} gap={{base:'1rem', md:"2rem"}}>
+            <Box w={{ base: '5rem', md: '15rem' }} h="1rem" bg="brand.200" />
             <Heading
               as="h2"
               fontSize={{ base: '2xl', md: '5xl' }}
@@ -74,9 +74,9 @@ export default function Orientacoes({
 
           {/* Bloco 1 */}
           <HStack align="start" spacing={4} flexDirection={'column'}>
-            <Box display={'flex'} flexDirection={"row"} alignItems={'flex-start'} gap={"2rem"}>
+            <Box display={'flex'} flexDirection={"row"} alignItems={'flex-start'} gap={{base:'1rem', md:"2rem"}}>
             <Box
-              w={{ base: '1rem', md: '5rem' }}
+              w={{ base: '3rem', md: '5rem' }}
               h="46px"
               rounded="full"
               display="grid"
@@ -124,9 +124,9 @@ export default function Orientacoes({
 
           {/* Bloco 2 */}
            <HStack align="start" spacing={10} flexDirection={'column'}>
-            <Box display={'flex'} flexDirection={"row"} alignItems={'flex-start'} gap={"2rem"}>
+            <Box display={'flex'} flexDirection={"row"} alignItems={'flex-start'} gap={{ base: '1rem', md: '2rem' }}>
             <Box
-              w={{ base: '1rem', md: '5rem' }}
+              w={{ base: '3rem', md: '5rem' }}
               h="46px"
               rounded="full"
               display="grid"
@@ -140,8 +140,8 @@ export default function Orientacoes({
             <Box as="p" 
                 fontSize={{ base: 'lg', md: '2rem' }}
                 lineHeight={{base:'1', md:'1.5'}}
-                fontWeight="300"color="brand.800"  
-                mb={6}>
+                fontWeight="100" color="brand.800"  
+                mb={{base:0, md:6}}  >
                 Se o atendimento for via <b>convênio</b>, não se esqueça de trazer:
               </Box>
               </VStack>

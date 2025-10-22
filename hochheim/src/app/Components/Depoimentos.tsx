@@ -40,7 +40,7 @@ const defaultItens: Depoimento[] = [
 
 export default function Depoimentos({ itens = defaultItens }: Props) {
   return (
-    <Box as="section" bg="gray.50" py={{ base: 12, md: 16 }}>
+    <Box as="section" bg="brand.20" py={{ base: 12, md: 16 }}>
       <Container maxW={{ base: '92%', md: '80%', lg: '70%' }}>
         {/* Título + divisor */}
         <VStack spacing={2}>
@@ -52,7 +52,7 @@ export default function Depoimentos({ itens = defaultItens }: Props) {
           >
             DEPOIMENTOS
           </Heading>
-          <Box display="flex" alignItems="center" gap={2}>
+          <Box display="flex" alignItems="center" gap={2} marginBottom={{base:'3rem', md:'0'}}>
             <Box w="64px" h="4px" bg="brand.200" rounded="full" />
             <Box
               w="10px"
@@ -61,7 +61,7 @@ export default function Depoimentos({ itens = defaultItens }: Props) {
               transform="rotate(45deg)"
               rounded="2px"
             />
-            <Box w="64px" h="4px" bg="brand.200" rounded="full" />
+            <Box w="64px" h="4px" bg="brand.200" rounded="full"/>
           </Box>
         </VStack>
 
@@ -80,7 +80,7 @@ export default function Depoimentos({ itens = defaultItens }: Props) {
               rounded="2xl"
               p={{ base: 5, md: '3.5rem' }}
               boxShadow="sm"
-              marginTop={d.marginTop ?? 0}
+              marginTop={{base:'0', md: d.marginTop ?? 0}}
 
             >
               <VStack align="start" spacing={3}>

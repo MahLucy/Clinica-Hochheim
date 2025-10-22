@@ -21,7 +21,7 @@ export default function HistoriaHochheim({
   img2 = '/images/hist-2.jpg',
 }: HistoriaHochheimProps) {
   return (
-    <Box as="section" bg="white" color="brand.800" py={{ base: 10, md: 16 }}>
+    <Box as="section" bg="brand.20" color="brand.800" py={{ base: 10, md: 16 }}>
       <Container maxW={{ base: '92%', md: '70%', lg: '58%' }}>
         <VStack spacing={{ base: 6, md: "4rem" }} align="stretch">
 

@@ -24,7 +24,7 @@ export default function HeroBanner({
 }: HeroBannerProps) {
   return (
     <Box as="section" bg="brand.800" color="white" py={{ base: 10, md: 12 }}>
-      <Container maxW="80%">
+      <Container maxW={{ base: '95%', md: '80%' , lg: '70%' }}>
         <Grid
           templateColumns={{ base: '1fr', md: '3fr 2fr' }}
           alignItems="center"
@@ -37,30 +37,32 @@ export default function HeroBanner({
 
                 <Box>
               <HStack  opacity={0.85}>
-                <Text fontSize="light" letterSpacing="widest" color={'brand.200'}>
+                <Text fontWeight="light" letterSpacing="widest" color={'brand.200'} fontSize={{ base: '0.8rem', md: '1rem' }}>
                   CLÍNICA HOCHHEIM • HIDRO E TERAPIAS
                 </Text>
-                <Image src={arrowSrc} alt="seta decorativa"  position="absolute" top="18rem" left={'30rem'} h={{ base: '0px', md: '7rem' }}
+                <Image src={arrowSrc} alt="seta decorativa"  position="absolute" top="15.5rem" left={'36rem'} h={{ base: '0px', md: '7rem' }}
     w="auto"/>
               </HStack>
               <Heading
                 lineHeight={ 0.97}
                 fontWeight={'normal'}
                 fontSize={{ base: '2xl', md: '5xl' }}
+                marginTop={{ base: '1rem', md: '0' }}
+
               >
                 Há mais de<br></br>
             </Heading>
 
-                <Box as="span" fontWeight={{ base: '500', md: '900'}} display="inline-block" fontSize={{base:'2.5rem', md:'5rem'}} lineHeight={0.8}>
+                <Box as="span" fontWeight={{ base: '500', md: '900'}} display="inline-block" fontSize={{base:'2.5rem', md:'5rem'}} lineHeight={{base: 1, md:0.8}}>
                   duas décadas
                 </Box>
 
-              <Text lineHeight={ 0.97} fontSize={{ base: '2xl', md: '5xl' }} fontWeight={ 'normal'} opacity={0.95}>
+              <Text lineHeight={{base: 1.3, md:0.97}} fontSize={{ base: '2xl', md: '5xl' }} fontWeight={ 'normal'} opacity={0.95}>
                 restaurando movimentos<br></br> e recuperando{' '}
                 <Box as="b">qualidade<br></br> de vida</Box> de nossos clientes.
               </Text>
 
-              <Text lineHeight={ 1} fontSize={{ base: 'xl', md: '3xl' }} fontWeight={ 'hairline'} opacity={0.95}>
+              <Text lineHeight={{base: 1.3, md:1}} fontSize={{ base: 'xl', md: '3xl' }} fontWeight={ 'hairline'} opacity={0.95}>
                 Cuidado técnico, estrutura completa<br></br> e foco absoluto na sua saúde.
               </Text>
             </Box>

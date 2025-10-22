@@ -41,11 +41,11 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Logo Hochheim"
-                w="150px"
+                w={{base:'7rem', md:"150px"}}
                 draggable={false}
               />
               <Text
-                fontSize={{ base: 'sm', md: '1.5rem' }}
+                fontSize={{ base: 'lg', md: 'xl' }}
                 maxW="20rem"
                 lineHeight="1.5"
                 opacity={0.9}
@@ -71,21 +71,21 @@ export default function Footer() {
                 mb={2}
                 borderBottom="2px solid white"
                 display="inline-block"
-                fontSize={"2xl"}
+                fontSize={{base:'lg', md:"xl"}}
 
               >
                 Menu Rápido
               </Text>
-              <Link href="#sobre" _hover={{ textDecoration: 'underline' }} fontSize={"2xl"} fontWeight={100}>
+              <Link href="/" _hover={{ textDecoration: 'underline' }} fontSize={{base:'lg', md:"xl"}} fontWeight={100}>
                 Sobre
               </Link>
-              <Link href="#servicos" _hover={{ textDecoration: 'underline' }} fontSize={"2xl"} fontWeight={100}>
+              <Link href="/Servicos" _hover={{ textDecoration: 'underline' }} fontSize={{base:'lg', md:"xl"}} fontWeight={100}>
                 Serviços
               </Link>
-              <Link href="#blog" _hover={{ textDecoration: 'underline' }} fontSize={"2xl"} fontWeight={100}>
+              <Link href="/Blog" _hover={{ textDecoration: 'underline' }} fontSize={{base:'lg', md:"xl"}} fontWeight={100}>
                 Blog
               </Link>
-              <Link href="#kids" _hover={{ textDecoration: 'underline' }} fontSize={"2xl"} fontWeight={100}>
+              <Link href="/Kids" _hover={{ textDecoration: 'underline' }} fontSize={{base:'lg', md:"xl"}} fontWeight={100}>
                 Kids Hochheim
               </Link>
             </VStack>
@@ -98,32 +98,32 @@ export default function Footer() {
               align={{ base: 'center', md: 'center' }}
               justify="center"
             >
-              <Text fontSize={"2xl"} fontWeight={100}>Blumenau - SC</Text>
-              <Text fontSize={"2xl"} fontWeight={100}>email@email.com.br</Text>
-              <Text fontSize={"2xl"} fontWeight={100}>47 99999-9999</Text>
+              <Text fontSize={{base:'lg', md:"xl"}} fontWeight={100}>Blumenau - SC</Text>
+              <Text fontSize={{base:'lg', md:"xl"}} fontWeight={100}>email@email.com.br</Text>
+              <Text fontSize={{base:'lg', md:"xl"}} fontWeight={100}>47 99999-9999</Text>
 
               <HStack spacing={3} pt={2}>
-                 <Link href="#" _hover={{ opacity: 0.8 }}>
+                 <Link href="https://www.linkedin.com/company/hochheim-hidro-e-terapias/?originalSubdomain=br" _hover={{ opacity: 0.8 }}>
                   <Image
                     src={linkedin.src}
                     alt="LinkedIn"
-                    boxSize="50px"
+                    boxSize={{base:'3rem', md:"4rem"}}
                     draggable={false}
                   />
                 </Link>
-                <Link href="#" _hover={{ opacity: 0.8 }}>
+                <Link href="https://wa.me/5547999833291?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica!" _hover={{ opacity: 0.8 }}>
                   <Image
                     src={whatsapp.src}
                     alt="WhatsApp"
-                    boxSize="50px"
+                    boxSize={{base:'2rem', md:"3rem"}}
                     draggable={false}
                   />
                 </Link>
-                <Link href="#" _hover={{ opacity: 0.8 }}>
+                <Link href="https://www.instagram.com/clinicahochheim" _hover={{ opacity: 0.8 }}>
                   <Image
                     src={instagram.src}
                     alt="Instagram"
-                    boxSize="50px"
+                    boxSize={{base:'2rem', md:"3rem"}}
                     draggable={false}
                   />
                 </Link>
@@ -137,7 +137,7 @@ export default function Footer() {
           templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
           mt={10}
           pt={6}
-          fontSize="xl"
+          fontSize={{base:'0.9rem', md:"xl"}}
           opacity={0.85}
         >
           <Text textAlign={{ base: 'center', md: 'left' }}>

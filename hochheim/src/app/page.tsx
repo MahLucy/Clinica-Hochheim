@@ -7,13 +7,24 @@ import Orientacoes from './Components/OrientacaoAgendamento';
 import Forms from './Components/Forms';
 import Depoimentos from './Components/Depoimentos';
 import Footer from './Components/Footer';
+import ScrollToTopButton from './Components/ScrollToTopButton'
+import { ScrollFadeIn } from './Components/ScrollFadeIn'
+
+import { Box,} from '@chakra-ui/react';
+
 
 export default function Page() {
   return (
     <>
-      <NavBar active="sobre" />
+    <Box bg="brand.20">
+    <ScrollFadeIn>
+      <NavBar />
       <HeroBanner imageSrc="/banner.png" arrowSrc="/arrow.png" />
-      <AboutSection iconSrc="/icons/iconeBolaExercicio.png" />
+      </ScrollFadeIn>
+      <ScrollFadeIn>
+      <AboutSection iconSrc="/icons/iconeBolaExercicio.png" />      
+      </ScrollFadeIn>
+      <ScrollFadeIn>
       <Diferenciais
         images={[
           '/dif-1.png',
@@ -24,13 +35,26 @@ export default function Page() {
           '/dif-6.png',
         ]}
       />
+      </ScrollFadeIn>
+      <ScrollFadeIn>
       <CallToAction />
+      </ScrollFadeIn>
+      <ScrollFadeIn>
       <Orientacoes
         iconAgenda="/icons/agenda.png"
         iconConvenio="/icons/convenio.png"
         bulletIcon="/icons/bullet-triangle.png"
       />
+      </ScrollFadeIn> 
+      <ScrollFadeIn>
+         <Box
+      as="section"
+      id="contato" 
+      >
       <Forms/>
+      </Box>
+      </ScrollFadeIn>
+      <ScrollFadeIn>
             <Depoimentos
         itens={[
           { nome: 'Nome', texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Excepteur sint occaecat cupidatat non proident.' },
@@ -38,7 +62,12 @@ export default function Page() {
           { nome: 'Nome', texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Excepteur sint occaecat cupidatat non proident.' },
         ]}
         />
+      </ScrollFadeIn>
+        <ScrollToTopButton />
+         <ScrollFadeIn>
         <Footer />
+        </ScrollFadeIn>
+        </Box>
     </>
   );
 }
